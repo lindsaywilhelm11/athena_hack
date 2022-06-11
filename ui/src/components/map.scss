@@ -1,0 +1,10 @@
+.suggestion-item {
+  color: black;
+  cursor: pointer;
+  background-color: white;
+
+  &--active {
+    background-color: #ddd;
+    color: #222;
+  }
+}
