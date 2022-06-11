@@ -4,7 +4,6 @@ import { handleSelect } from './functions/map';
 import "./map.scss"
 
 export function Map() {
-  // HOOKS
   const [addressText, setAddress] = useState("");
   const [latLng, setLatLng] = useState({});
 
@@ -28,7 +27,6 @@ export function Map() {
             const className = suggestion.active
               ? 'suggestion-item--active'
               : 'suggestion-item';
-            // inline style for demonstration purpose
             return (
               <div
                 key={Math.random()}

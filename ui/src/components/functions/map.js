@@ -1,4 +1,4 @@
-import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
+import { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 
 export const handleSelect = async (address, setAddress, setLatLng) => {
   try {
