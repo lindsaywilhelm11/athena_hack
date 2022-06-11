@@ -3,4 +3,8 @@
 ## How to run
 
 - Ensure `npm i` has been run in `ui`
+
+### Backend
+- run ```pip install -r requirements.txt``` to install packages
+- run flask from the backend directory with ```flask run```
 <!-- - FINISH -->
