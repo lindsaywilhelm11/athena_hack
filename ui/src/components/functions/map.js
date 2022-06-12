@@ -11,3 +11,8 @@ export const handleSelect = async (address, setAddress, setLatLng) => {
     console.warn("ERROR", e)
   }
 };
+
+export const getMarkerPositions = () => {
+  const data = [{ lat: 55.3781, lng: 3.4360 }, { lat: 52.3555, lng: 1.1743 }, { lat: 52.63087, lng: 1.27937 }]
+  return data
+}
