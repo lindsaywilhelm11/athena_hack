@@ -66,7 +66,7 @@ def serve():
 
 @app.route('/all-reports')
 def get_data():
-    reports = PayGapReport.query.order_by(PayGapReport.id.asc()).all()
+    reports = PayGapReport.query.order_by(PayGapReport.id.asc()).limit(10)
     report_list = []
     for report in reports:
         report_list.append(format_simple_report(report))
