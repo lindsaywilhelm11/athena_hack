@@ -54,7 +54,8 @@ def format_simple_report(report):
         "employer_name": report.employer_name,
         "diff_median_hourly_percent": report.diff_median_hourly_percent,
         "company_link": report.company_link,
-        "date_submitted": report.date_submitted
+        "date_submitted": report.date_submitted,
+        "post_code": report.post_code
     }
 
 
