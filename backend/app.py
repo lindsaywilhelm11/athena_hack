@@ -61,7 +61,7 @@ def serve():
     return send_from_directory(app.static_folder, 'index.html')
 
 
-@app.route('/test')
+@app.route('/all-reports')
 def get_data():
     reports = PayGapReport.query.order_by(PayGapReport.id.asc()).all()
     report_list = []
