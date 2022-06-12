@@ -1,5 +1,6 @@
 from flask import Flask, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS
 
 from datetime import datetime
 from os import environ
@@ -7,6 +8,7 @@ from os import environ
 app = Flask(__name__, static_folder='../ui/dist', static_url_path='')
 app.config['SQLALCHEMY_DATABASE_URI'] = environ.get("DATABASE_URI")
 db = SQLAlchemy(app)
+CORS(app)
 
 
 class PayGapReport(db.Model):
