@@ -1,15 +1,15 @@
-from flask import Flask
+from flask import Flask, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://tmp/test.db'
+app = Flask(__name__, static_folder='../ui/dist', static_url_path='')
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://tmp/test.db'
 db = SQLAlchemy(app)
 
 
 @app.route('/')
-def hello():
-    return 'Hey!'
+def serve():
+    return send_from_directory(app.static_folder, 'index.html')
 
 
 if __name__ == '__main__':
