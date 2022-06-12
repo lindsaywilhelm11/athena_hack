@@ -2,7 +2,9 @@
 
 ## How to run
 
+## Frontend
 - Ensure `npm i` has been run in `ui`
+- Run `npm run build` to create dist directory for Flask to use
 
 ### Backend
 - run ```pip install -r requirements.txt``` to install packages
