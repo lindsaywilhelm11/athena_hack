@@ -1,4 +1,4 @@
-from flask import Flask, send_from_directory
+from flask import Flask, send_from_directory, abort
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 
@@ -70,7 +70,11 @@ def get_data():
     report_list = []
     for report in reports:
         report_list.append(format_simple_report(report))
-    return {"reports": report_list}
+    try:
+        return {"reports": report_list}
+    except Exception as e:
+        # Can be replaced with rendering a 500 status code page template
+        return (str(e))
 
 
 @app.route('/company/<string:company>')
@@ -78,7 +82,11 @@ def get_company_data(company):
     company = PayGapReport.query.filter_by(
         employer_name=company).one()
     formatted_report = format_simple_report(company)
-    return {"company": formatted_report}
+    try:
+        return {"company": formatted_report}
+    except Exception as e:
+        # Can be replaced with rendering a 500 status code page template
+        return (str(e))
 
 
 if __name__ == '__main__':
