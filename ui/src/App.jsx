@@ -2,6 +2,7 @@ import { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
 import { AtAGlanceSection } from './components/AtAGlanceSection'
+import Search from './components/Search'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,6 +14,7 @@ function App() {
         <p>Hello Vite + React!</p>
         <p>
           <AtAGlanceSection />
+          <Search />
           <button type="button" onClick={() => setCount((count) => count + 1)}>
             count is: {count}
           </button>
