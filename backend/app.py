@@ -47,7 +47,7 @@ class PayGapReport(db.Model):
         self.employer_name = employer_name
 
 
-def format_report(report):
+def format_simple_report(report):
     return {
         "employer_name": report.employer_name,
         "diff_median_hourly_percent": report.diff_median_hourly_percent,
@@ -66,8 +66,16 @@ def get_data():
     reports = PayGapReport.query.order_by(PayGapReport.id.asc()).all()
     report_list = []
     for report in reports:
-        report_list.append(format_report(report))
+        report_list.append(format_simple_report(report))
     return {"reports": report_list}
+
+
+@app.route('/company/<string:company>')
+def get_company_data(company):
+    company = PayGapReport.query.filter_by(
+        employer_name=company).one()
+    formatted_report = format_simple_report(company)
+    return {"company": formatted_report}
 
 
 if __name__ == '__main__':
