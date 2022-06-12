@@ -1,17 +1,12 @@
-import { useState } from 'react';
 import PlacesAutocomplete from 'react-places-autocomplete';
 import { handleSelect } from './functions/map';
 import "./map.scss"
 
-export function Map() {
-  const [addressText, setAddress] = useState("");
-  const [latLng, setLatLng] = useState({});
-
-  console.log("DATA", addressText, latLng)
+export function SearchBar({ addressText, setAddressText, setLatLng }) {
   return <PlacesAutocomplete
     value={addressText}
-    onChange={setAddress}
-    onSelect={address => handleSelect(address, setAddress, setLatLng)}
+    onChange={setAddressText}
+    onSelect={address => handleSelect(address, setAddressText, setLatLng)}
   >
     {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
       <div>
@@ -42,5 +37,4 @@ export function Map() {
       </div>
     )}
   </PlacesAutocomplete>
-
 }

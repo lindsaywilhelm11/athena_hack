@@ -2,7 +2,7 @@ import { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
 import { AtAGlanceSection } from './components/AtAGlanceSection'
-import { Map } from './components/Map'
+import { MapArea } from './components/MapArea'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Map />
+        <MapArea />
         <p>Hello Vite + React!</p>
         <p>
           <AtAGlanceSection />
